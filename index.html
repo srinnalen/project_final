@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="user.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="search.css">
+    <link rel="stylesheet" href="news.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="icon" href="logo.jpg">
+</head>
+
+<body>
+    <header>
+        </div>
+        <div class="box-header ">
+
+                <div class="box-all ">
+                    <div class="logo ">
+                        <img src="logo.jpg" alt="">
+                    </div>
+                    <div class="banner">
+                        <img src="banner.jpg" alt="">
+                    </div>
+                    <div class="shearch">
+                        <input type="search" name="" id="search" placeholder="Search....">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    <i class="fa-solid fa-user" id="user"></i>
+                </div>
+            
+            
+        </div>
+        <div class="box-menu">
+            <ul>
+                <li><a href="#" id="home">Home</a></li>
+                <li><a href="#" id="product">Products</a></li>
+                <li><a href="#" id="promotion">Promotions</a></li>
+                <li><a href="#" id="news">News</a></li>
+                <li><a href="#" id="btn-contact">Contact</a></li>
+            </ul>
+        </div>
+        
+    </header>
+    <section>
+
+
+
+    </section>
+    <footer>
+        <div class="footer">
+            <div class="logo col-12">
+                <img src="logo.jpg" alt="">
+            </div> 
+            <div class="description">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga consequuntur quod obcaecati fugiat,
+                    accusamus error dolorum illum debitis? facere, explicabo nisi deserunt libero minima nobis ut!</p>
+            </div>
+            <div class="follow">
+                <ul>
+                    <li><a href="https://web.facebook.com/profile.php?id=100077890950889"><i class="fa-brands fa-facebook"></i>
+                    <li><a href="https://www.messenger.com/"> <i class="fa-brands fa-facebook-messenger"></i></a></li>
+                    <li><a href="https://telegram.org/"><i class="fa-brands fa-telegram"></i></a></li>
+                    <li><a href="https://www.tiktok.com/en/"> <i class="fa-brands fa-tiktok"></i></a></li>
+                    <li><a href="https://www.instagram.com/"><i class="fa-brands fa-instagram"></i></a></li></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+<script>
+    $(document).ready(function () {
+
+        $('#user').click(function () {
+            const userBox = ` <div class="box-user-all">
+        <div class="box-user">
+            <button class="btn btn-close"></button>
+            <h1>Sign Up</h1>
+            <p>Signing up to create an acoount.</p>
+            <div class="row mb-4">
+                <div class=" form-group col-12">
+                    <label for="" class="form-label text-secondary">Username</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+            </div> 
+            <div class="row mb-4">
+                <div class=" form-group col-12">
+                    <label for="" class="form-label text-secondary">Phone number</label>
+                    <input type="text" name="" id="" class="form-control">
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class=" form-group col-12">
+                    <label for="" class="form-label text-secondary">Password</label>
+                    <input type="password" name="" id="" class="form-control">
+                </div>
+            </div> 
+            <input type="checkbox" name="" id=""> Re-type password
+            <div class="row mb-4 ">
+                <button class="singup">Sing Up</button>
+            </div>   
+        </div>
+      </div>`;
+            $('body').append(userBox);
+        })
+        $('body').on('click', '.singup', function () {
+            $('.box-user-all').remove();
+        })
+        $('body').on('click', '.btn-close', function () {
+            $('.box-user-all').remove();
+        })
+        const homePage = () => {
+            $.ajax({
+                url: 'home.html',
+                cache: false,
+                success: function (response) {
+                    const product = `${response}`;
+                    $('section').html(product)
+                }
+            })
+        }
+        homePage();
+        $('#home').click(function () {
+            homePage();
+        })
+        const productPage = () => {
+            $.ajax({
+                url: 'product.html',
+                cache: false,
+                success: function (response) {
+                    const product = `${response}`;
+                    $('section').html(product)
+                }
+            })
+        }
+        $('#product').click(function () {
+            productPage();
+        })
+        const promotionPage = () => {
+            $.ajax({
+                url: 'promotion.html',
+                cache: false,
+                success: function (response) {
+                    const product = `${response}`;
+                    $('section').html(product)
+                }
+            })
+        }
+        $('#promotion').click(function () {
+            promotionPage();
+        })
+        $('#news').click(function () {
+            news = `<div class="news-all">
+             <div class="box-news">
+             <h1>News  about my products</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Consequatur consequuntur adipisci ducimus
+            perferendis, accusamus fugiat accusantium a voluptatibus porro odio optio nulla ut minus itaque ipsum nam
+            provident at facilis. Eum non dolorum laborum quae voluptatibus vitae sapiente officiis, temporibus
+            reprehenderit corrupti autem doloribus fugit natus, in asperiores voluptates possimus magnam? Repellendus
+            nobis odit alias, accusamus, neque, in quae hic maiores laboriosam numquam asperiores doloremque voluptate
+            facilis tenetur. Voluptatem vel est temporibus obcaecati optio culpa debitis accusantium tenetur architecto
+            hic facilis modi, inventore perferendis ullam, sunt eum iure, rerum recusandae ex ab illum aliquid.
+            Architecto, vero, ut reprehenderit exercitationem possimus delectus non tempora qui et omnis tempore enim
+            deleniti temporibus? Placeat maiores dignissimos minus sit, ullam atque quod, quasi consequatur eligendi qui
+            temporibus, sapiente obcaecati rem! Eos adipisci dicta quod, fugiat suscipit veritatis nulla culpa! Alias
+            incidunt reprehenderit repellat id autem iste provident soluta libero atque quod, corporis magnam, fugit
+            totam deleniti illum obcaecati officia suscipit ipsa dicta. Exercitationem dignissimos expedita in et
+            laudantium! Sed ullam, impedit eveniet deleniti fuga quidem, dolor reiciendis labore vero placeat delectus
+            aspernatur autem ducimus officia ea modi est nesciunt voluptatibus. Repudiandae aperiam quae facere fugit ut
+            voluptates earum qui voluptatum voluptate numquam corrupti quasi nihil, iusto dolor tempora ipsam eaque.
+            Unde sed nobis at non perferendis amet quis maxime tempore, sit similique repudiandae molestias hic tenetur
+            accusantium tempora asperiores exercitationem saepe quos rem quia sequi? Quis modi nemo quas dolor maiores
+            praesentium dolore iure earum id amet numquam, repudiandae sunt ducimus error velit cupiditate deserunt
+            assumenda officia iusto corrupti nulla ullam ipsam fuga? Totam libero ipsum rem reiciendis repellendus autem
+            dolores. Dolores accusantium impedit quisquam, maiores porro amet molestias, ipsam perferendis nobis atque
+            repellendus? Accusantium obcaecati repellat saepe sit est cum laboriosam nostrum fugit nihil modi,
+            voluptatem nulla laudantium eius minima? Hic, officiis. Sunt.</p>
+            <div class="btn btn-close"></div>
+                </div>
+            </div>`;
+            $('body').append(news);
+            $('body').on('click', '.btn-close', function () {
+                $('.news-all').remove()
+            })
+        })
+        $('#btn-contact').click(function () {
+            const popup = `<div class="popup-contact">
+                    <div class="box">
+                        <div id="btn-close"><i class="fa-solid fa-xmark"></i></div>
+                        <h4>CONTACT</h4>
+                        <div class="container frm">
+                            <div class="row mb-4">
+                                <div class=" form-group col-6">
+                                    <label for="" class="form-label text-secondary">USERNAME</label>
+                                    <input type="text" name="" id="" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="" class="form-label text-secondary">EMAIL</label>
+                                    <input type="email" name="" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class=" form-group col-6">
+                                    <label for="" class="form-label text-secondary">PASSWORD</label>
+                                    <input type="password" name="" id="" class="form-control">
+                                </div>
+                                <div class="col">
+                                    <label for="" class="form-label text-secondary">PHONE NUMBER</label>
+                                    <input type="text" name="" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class=" form-group col-12">
+                                    <label for="" class="form-label text-secondary">ADDRESS</label>
+                                    <input type="text" name="" id="" class="form-control">
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class=" form-group col-12">
+                                    <label for="" class="form-label text-secondary">DESCRIPTIONS</label>
+                                    <textarea name="" id="" cols="10" rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                            <div class="row mb-4">
+                                <div class=" form-group col-12">
+                                    <button class="btn btn-primary"id="save">Save</button>
+                                    <button class="btn btn-danger " id="cancel">Cancel</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>`;
+            $('body').append(popup);
+
+        })
+        $('body').on('click', '#btn-close', function () {
+            $('.popup-contact').remove();
+        })
+        $('body').on('click', '#cancel', function () {
+            $('.popup-contact').remove();
+        })
+        $('body').on('click', '#save', function () {
+            $('.popup-contact').remove();
+        })
+
+        // $('#menu').click(function(){
+        //     menu='';
+            
+        // })
+    })
+</script>
+
+</html>

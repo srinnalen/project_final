@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    h1{
+        font-size: 25px;
+        width: 100%;
+        /* height: 20px; */
+        /* background-color: aqua; */
+        padding: 15px;
+        border-bottom: 3px solid rgb(19, 19, 19);
+    }
+</style>
+<body>
+    <div class="product">
+            <h1>ASUS</h1>
+            <div class="box-card" id="asus">
+                <!-- <div class="card">
+                    <div class="promotion">
+                        <p>Promotion</p>
+                    </div>
+                    <div class="img">
+                        <img src="image/asus1.jpg" alt="">
+                    </div>
+                    <div class="body">
+                        <div class="title">
+                            <p>Asus labtop</p>
+                        </div>
+                        <div class="description">
+                            <p>New asus labtop 2023</p>
+                        </div>
+                        <div class="price">
+                            <p>price: 899.99$</p>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+           <h1>LENOVO</h1>
+           <div class="box-card" id="le">
+            
+           </div>
+           
+    </div>
+   
+</body>
+<script>
+
+    $(document).ready(function(){
+        const data=[
+            {
+                id:1,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus1.jpg',
+                category:'asus',
+                reqular_price:789.99,
+                sale_price:759.99,
+                viewer:700
+            },
+            {
+                id:2,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus2.jpg',
+                category:'asus',
+                reqular_price:689.99,
+                sale_price:639.99,
+                viewer:600
+            },
+            {
+                id:3,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus3.jpg',
+                category:'asus',
+                reqular_price:989.99,
+                sale_price:979.99,
+                viewer:500
+            },
+            {
+                id:4,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus4.jpg',
+                category:'asus',
+                reqular_price:889.99,
+                sale_price:0,
+                viewer:900
+            },
+            {
+                id:5,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus5.jpg',
+                category:'asus',
+                reqular_price:669.99,
+                sale_price:0,
+                viewer:500
+            },
+            {
+                id:6,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus6.jpg',
+                category:'asus',
+                reqular_price:989.99,
+                sale_price:959.99,
+                viewer:990
+            },
+            {
+                id:7,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus7.jpg',
+                category:'asus',
+                reqular_price:999.99,
+                sale_price:950,
+                viewer:994
+            },
+            {
+                id:8,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus8.jpg',
+                category:'asus',
+                reqular_price:899.99,
+                sale_price:0,
+                viewer:700
+            },
+            {
+                id:9,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus9.jpg',
+                category:'asus',
+                reqular_price:1369.99,
+                sale_price:1340,
+                viewer:1000
+            },
+            {
+                id:10,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus10.jpg',
+                category:'asus',
+                reqular_price:879.99,
+                sale_price:0,
+                viewer:600
+            },
+            {
+                id:11,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus11.jpg',
+                category:'asus',
+                reqular_price:989.99,
+                sale_price:970,
+                viewer:700
+            },
+            {
+                id:12,
+                name:'Asus labtop',
+                description:'New asus labtop',
+                image:'asus12.jpg',
+                category:'asus',
+                reqular_price:679.99,
+                sale_price:0,
+                viewer:700
+            },
+            {
+                id:13,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le1.jpg',
+                category:'lenovo',
+                reqular_price:889.99,
+                sale_price:860,
+                viewer:789
+            },
+            {
+                id:14,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le2.jpg',
+                category:'lenovo',
+                reqular_price:890,
+                sale_price:0,
+                viewer:979
+            },
+            {
+                id:15,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le3.jpg',
+                category:'lenovo',
+                reqular_price:779.99,
+                sale_price:759.99,
+                viewer:789
+            },
+            {
+                id:16,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le4.jpg',
+                category:'lenovo',
+                reqular_price:969.99,
+                sale_price:0,
+                viewer:589
+            },
+            {
+                id:17,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le5.jpg',
+                category:'lenovo',
+                reqular_price:679.99,
+                sale_price:650,
+                viewer:889
+            },
+            {
+                id:18,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le6.jpg',
+                category:'lenovo',
+                reqular_price:779.99,
+                sale_price:0,
+                viewer:999
+            },
+            {
+                id:19,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le7.jpg',
+                category:'lenovo',
+                reqular_price:789.00,
+                sale_price:0,
+                viewer:689
+            },
+            {
+                id:20,
+                name:'Lenovo labtop',
+                description:'New lenovo labtop',
+                image:'le8.jpg',
+                category:'lenovo',
+                reqular_price:889.99,
+                sale_price:0,
+                viewer:989
+            }
+        ];
+        console.log(data)
+        const typeProduct=()=>{
+         product='';
+            data.sort((a,b)=>a.id-b.id);
+            data.forEach((e)=>{
+                if(e.category=='asus'){
+                    if(e.sale_price==0){
+                        product+=`<div class="card">
+                                <div class="img">
+                                    <img src="${e.image}" alt="">
+                                </div>
+                                <div class="body">
+                                    <div class="title">
+                                        <p>${e.name}</p>
+                                    </div>
+                                    <div class="description">
+                                        <p>${e.description}</p>
+                                    </div>
+                                    <div class="price">
+                                        <p>Price:$${e.reqular_price}</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                    }else{
+                        product+=`<div class="card">
+                                <div class="promotion">
+                                     <p>Promotion</p>
+                                 </div>
+                                <div class="img">
+                                    <img src="${e.image}" alt="">
+                                </div>
+                                <div class="body">
+                                    <div class="title">
+                                        <p>${e.name}</p>
+                                    </div>
+                                    <div class="description">
+                                        <p>${e.description}</p>
+                                    </div>
+                                    <div class="price">
+                                        <del class="text-secondary">$${e.reqular_price}</del>
+                                        <p>Price:$${e.sale_price}</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                    }
+                     $('#asus').html(product)
+                   
+                }
+
+              
+            })
+            
+        }
+        typeProduct();
+        const lenovo=()=>{
+            product='';
+            data.sort((a,b)=>a.id-b.id);
+            data.forEach((e)=>{
+                if(e.category=='lenovo'){
+                    if(e.sale_price==0){
+                        product+=`<div class="card">
+                                <div class="img">
+                                    <img src="${e.image}" alt="">
+                                </div>
+                                <div class="body">
+                                    <div class="title">
+                                        <p>${e.name}</p>
+                                    </div>
+                                    <div class="description">
+                                        <p>${e.description}</p>
+                                    </div>
+                                    <div class="price">
+                                        <p>Price:$${e.reqular_price}</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                    }else{
+                        product+=`<div class="card">
+                                <div class="promotion">
+                                     <p>Promotion</p>
+                                 </div>
+                                <div class="img">
+                                    <img src="${e.image}" alt="">
+                                </div>
+                                <div class="body">
+                                    <div class="title">
+                                        <p>${e.name}</p>
+                                    </div>
+                                    <div class="description">
+                                        <p>${e.description}</p>
+                                    </div>
+                                    <div class="price">
+                                        <del class="text-secondary">$${e.reqular_price}</del>
+                                        <p>Price:$${e.sale_price}</p>
+                                    </div>
+                                </div>
+                            </div>`;
+                    }
+                     $('#le').html(product)
+                   
+                }
+
+              
+            }) 
+        }
+        lenovo();
+    })
+</script>
+</html>
